@@ -19,7 +19,7 @@ app.set("view engine", "ejs"); //Tells Express to use the EJS view engine
 
 app.get("/", function(request, response){
     response.render("index",{
-        message: "Welcome to the homepage!"
+       // message: "Welcome to the homepage!" //Remove the message field
 
     });
 });
