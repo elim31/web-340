@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+    <title>Exercise 5.2 - If...Else...Render</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-sm bg-light" style="background-color: #69b0e2;">
+
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class ="nav-link" href="#">Home</a>
+    </li>
+    <li class ="nav-item">
+        <a class="nav-link" href="#">About</a>
+    </li>
+    <li class ="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+    </li>
+    </ul>
+    </nav>
+<div class ="container">
+    <br /><br />
+    
+    <h2>Names</h2>
+
+    <% if(names.length > 0){ %>
+        <% for (var i = 0; i < names.length; i++){ %>
+            <div class ="alert alert-success"><strong><%=names[i] %></strong></div>
+            <% } %>
+    <% } %>
+   
+</div>
+
+    </body>
+    </html>
