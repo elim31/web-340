@@ -1,12 +1,32 @@
 var express = require("express");
 
+var mongoose=require("mongoose");
+var Schema = mongoose.Schema;
+
 var http = require("http");
 
 var path = require("path");
 
 var logger = require("morgan");
 
+var Employee = require("./models/employee");
+
 var app = express();
+
+//MongoDB connection
+var mongoDB = "mongodb+srv://eulim:eulim@buwebdev-cluster-1.q7crj.mongodb.net/ems";
+mongoose.connect(mongoDB, {
+    useMongoClient: true
+});
+
+mongoose.Promise = global.Promise;
+
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error: "));
+db.once("open", function() {
+    console.log("Application connected to mLab MongoDB instance");
+});
+
 
 app.set("views", path.resolve(__dirname, "views"));
 
@@ -33,7 +53,6 @@ app.get("/list", function (request, response) {
         message  : "View of employee records"
     });
 });
-
 
 
 app.get("/new", function (request, response) {
